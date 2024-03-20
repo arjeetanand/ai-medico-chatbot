@@ -19,6 +19,9 @@ from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 from string import punctuation
 
+import nltk
+
+nltk.download("stopwords")
 
 stop_words = set(stopwords.words("english"))
 lemmatizer = WordNetLemmatizer()
