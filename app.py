@@ -24,6 +24,10 @@ import nltk
 
 nltk.download("stopwords")
 
+import nltk
+
+nltk.download("wordnet")
+
 stop_words = set(stopwords.words("english"))
 lemmatizer = WordNetLemmatizer()
 
