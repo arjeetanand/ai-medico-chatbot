@@ -237,7 +237,3 @@ def predict():
 @app.route("/note")
 def note():
     return render_template("notebook.html")
-
-
-if __name__ == "__main__":
-    app.run(debug=False)
