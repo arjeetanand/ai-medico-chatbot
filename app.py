@@ -92,7 +92,7 @@ classifier.compile(
 classifier.fit(X, Y, batch_size=8, epochs=1, shuffle=True, verbose=2)
 
 # Load drugs data from Excel
-drugs_data = pd.read_csv("Dataset\disease_drugs.csv")
+drugs_data = pd.read_csv("Dataset/disease_drugs.csv")
 
 # Create a dictionary mapping diseases to drugs
 disease_drugs = {}
