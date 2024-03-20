@@ -15,7 +15,8 @@ from tensorflow.keras.layers import (
 )
 from tensorflow.keras.models import Sequential
 import sqlite3
-from nltk.corpus import stopwords
+
+# from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 from string import punctuation
 
