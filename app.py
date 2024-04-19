@@ -19,13 +19,9 @@ import sqlite3
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 from string import punctuation
-
 import nltk
 
 nltk.download("stopwords")
-
-import nltk
-
 nltk.download("wordnet")
 
 stop_words = set(stopwords.words("english"))
@@ -46,7 +42,6 @@ def cleanData(doc):
     return tokens
 
 
-# Load dataset and preprocess it
 dataset = pd.read_csv("Dataset/dataset.csv", encoding="ISO-8859-1")
 labels = dataset["Source"].unique().tolist()
 symptoms = dataset.Target
@@ -89,9 +84,11 @@ classifier.add(Dense(Y.shape[1], activation="softmax"))
 classifier.compile(
     optimizer="adam", loss="categorical_crossentropy", metrics=["accuracy"]
 )
-classifier.fit(X, Y, batch_size=8, epochs=1, shuffle=True, verbose=2)
+classifier.fit(X, Y, batch_size=8, epochs=5, shuffle=True, verbose=1)
 
 # Load drugs data from Excel
+
+# drugs_data = pd.read_csv("Dataset/combined_drug_names.xlsx")
 drugs_data = pd.read_csv("Dataset/disease_drugs.csv")
 
 # Create a dictionary mapping diseases to drugs
@@ -237,3 +234,12 @@ def predict():
 @app.route("/note")
 def note():
     return render_template("notebook.html")
+
+
+@app.route("/noteb")
+def noteb():
+    return render_template("notebook1.html")
+
+
+if __name__ == "__main__":
+    app.run(debug=False)
